@@ -3,9 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InstaPix.Views.MainPage"
              Title="{Binding Title}">
-
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+    <StackLayout Margin="20">
+        <Label Text="{Binding DisplayText, Mode=TwoWay}"
+               Margin="0, 0, 0, 20"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="20" />
+        <Entry Keyboard="Default"
+               HorizontalOptions="FillAndExpand"
+               Placeholder="Enter your name here"
+               PlaceholderColor="LightGray"
+               FontSize="16"
+               Text="{Binding Name, Mode=TwoWay}"
+               TextColor="Black"/>
+        <Button BackgroundColor="DeepSkyBlue"
+                HorizontalOptions="FillAndExpand"
+                TextColor="White"
+                Text="Say Hello"
+                Command="{Binding EnterNameCommand}"/>
     </StackLayout>
-
 </ContentPage>
